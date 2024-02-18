@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: lightslategray;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(219, 218, 235) 0%, rgba(171,171,185,1) 35%, rgb(148, 217, 233) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat";
+}
+
+.container {    
+    width: 366px;
+    height: 650px;
+    position: relative;
+    background-color: gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.top {
+   width: 100%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px;
+   z-index: 1;
+}
+
+.capa-album {
+  width: 100%;
+  height: 366px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background: url("/src/img/background_2.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform-origin: 0% 0%;
+  transition: all 0.3s ease-in;
+}
+
+.container.active .capa-album {
+  top: 53px;
+  left: 40px;
+  transform: scale(0.25);
+  border-radius: 20px;
+}
+
+.container-lista-musicas {
+  width: 100%;
+  top: 180px;
+  visibility: hidden;
+  position: absolute;
+}
+
+.container.active .container-lista-musicas {
+  visibility: visible;
+}
+
+.table-musicas {
+  width: 100%;
+  border-spacing: 0 5px;
+}
+
+.table-musicas tr {
+  height: 50px;
+  text-indent: 30px;
+  font-size: 16px;
+  background-color:lightslategray;
+  transition: all 0.3s;
+}
+
+.table-musicas tr:hover {
+  background-color: lightsteelblue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.info {
+  position: absolute;
+  text-align: center;
+  top: 450px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.container.active .info {
+  top: 60px;
+  left: 150px;
+  text-align: left;
+  transform: translateX(0);
+}
+
+.btns-player {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  position: absolute;  
+  bottom: 100px;
+  font-size: 32px;
+}
+
+.container.active .btns-player {
+  position: absolute;
+  width: 216px;
+  left: -44px;
+  bottom: 4px;
+  transform: scale(0.45);
+}
+
+.btns-funcionalidades {
+  width: 100%;
+  padding: 15px 15px;
+  display: flex;
+  position: absolute;
+  font-size: 15px;
+  bottom: 12px;
+  left: 0;  
+  align-items: center;
+  justify-content: space-around;
+  z-index: 20;
+  transition: all 0.3s;
+}
+
+.container.active .btns-funcionalidades {
+  bottom: -60px;
+}
